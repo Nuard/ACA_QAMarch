@@ -16,7 +16,7 @@ public class PageObject {
 	}
 	
 	public boolean isElementPresent(final String elementxPath) {
-		return (new WebDriverWait(driver, 40)).until(new ExpectedCondition<Boolean>() {
+		return new WebDriverWait(driver, 40).until(new ExpectedCondition<Boolean>() {
 			 public Boolean apply(WebDriver d) {
 	                return d.findElement(By.xpath(elementxPath)) != null;
 	            }
