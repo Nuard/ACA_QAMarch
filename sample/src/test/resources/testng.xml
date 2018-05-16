@@ -1,8 +1,22 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Suite">
-   <test name="Test2">
-    <classes>
-      <class name="firstTest.MyTestClass2"/>
-    </classes>
-  </test>
+<suite name="Sanity">
+  <test name="Test1">
+   <classes>
+     <class name="com.vmware.LoginTests">
+    <methods>
+       <include name="loginWithValidCredentials" />
+     </methods>
+     </class>
+     <class name="com.vmware.MessagingTests">
+    <methods>
+       <include name="sendMessage" />
+     </methods>
+     </class>
+   </classes>
+ </test>
+ <test name="Test2">
+   <classes>
+     <class name="firstTest.MyTestClass2"/>
+   </classes>
+ </test>
 </suite>
