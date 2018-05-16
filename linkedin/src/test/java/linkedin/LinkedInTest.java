@@ -3,6 +3,8 @@ package linkedin;
 import edit.EditIntroWindow;
 import edit.EditPhotoWindow;
 import edit.EditProfilePage;
+import messagingbox.ComposeMessageWindow;
+import messagingbox.MessagingWindow;
 import navbar.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,58 +14,60 @@ import util.FunctionalTestBase;
 
 public class LinkedInTest extends FunctionalTestBase {
 	
-	final String username = "fortesting14@yandex.ru";
-	final String pass = "Knockknock14";
+ final String username = "fortesting14@yandex.ru";
+ final String pass = "Knockknock14";
 	
 	@Test
-	public void loginPageTest() throws InterruptedException {
+	public void loginPageTest() {
 
 	LinkedinHomePage linkedinhomepage = new LinkedinHomePage(driver);
-	linkedinhomepage.loginData(username, pass);
-	Assert.assertTrue(linkedinhomepage.isElementPresent(LinkedinHomePage.FeedPageXpath));
 	
-	FeedPage feedpage = new FeedPage (driver);
-	Assert.assertTrue(feedpage.isElementPresent(FeedPage.FeedPageXpath));
-	feedpage.clickDropdownMenu();
+	FeedPage feedpage = linkedinhomepage.loginData(username, pass);
+	Assert.assertTrue(linkedinhomepage.isElementPresent(FeedPage.FeedPageXpath));
 	
-	EditProfilePage editprofilepage = new EditProfilePage (driver);
+	EditProfilePage editprofilepage = feedpage.clickDropdownMenu();
 	Assert.assertTrue(editprofilepage.isElementPresent(EditProfilePage.EditProfilePageXpath));
-	editprofilepage.profilePhoto();
-
-	EditPhotoWindow editphotowindow = new EditPhotoWindow (driver);
+	
+	EditPhotoWindow editphotowindow = editprofilepage.profilePhoto();
 	Assert.assertTrue(editphotowindow.isElementPresent(EditPhotoWindow.EditPhotoXpath));
-	editphotowindow.applyClick();
+	
 
-	EditIntroWindow editintrowindow = new EditIntroWindow (driver);
+	EditIntroWindow editintrowindow = editphotowindow.applyClick();
 	Assert.assertTrue(editintrowindow.isElementPresent(EditIntroWindow.EditIntroWindowXpath));
-	editintrowindow.saveeditIntro();
-		Thread.sleep(3000);
 
+	editprofilepage = editintrowindow.saveeditIntro();
+	
 	}
 
 	@Test
-		public void navBarTest() throws InterruptedException {
+	public void navBarTest() {
 
-			NavHomeIconRestults navhomeiconresults = new NavHomeIconRestults (driver);
-			navhomeiconresults.clickHome();
-			Assert.assertTrue(navhomeiconresults.isElementPresent(NavHomeIconRestults.FeedPageXpath));
+	NavBarResults navbarresults = new NavBarResults (driver);
+		
+	NavHomeIconRestults navhomeiconresults = navbarresults.clickHome();
+	Assert.assertTrue(navhomeiconresults.isElementPresent(NavHomeIconRestults.FeedPageXpath));
+			
+	NavMyNetworkIconResults navmynetworkresults = navhomeiconresults.clickMynetwork();
+	Assert.assertTrue(navmynetworkresults.isElementPresent(NavMyNetworkIconResults.MyNetworkPageXpath));
+			
+	NavJobsIconResults navjobsiconresults = navmynetworkresults.clickJobs ();
+	Assert.assertTrue(navjobsiconresults.isElementPresent(NavJobsIconResults.JobsIconXpath));
 
-			NavMyNetworkIconResults namynetworkresults = new NavMyNetworkIconResults (driver);
-			namynetworkresults.clickMynetwork();
-			Assert.assertTrue(namynetworkresults.isElementPresent(NavMyNetworkIconResults.MyNetworkPageXpath));
+	NavMessagingIconResults navmessagingiconresults = navjobsiconresults.clickMessaging();
+	Assert.assertTrue(navmessagingiconresults.isElementPresent(NavMessagingIconResults.MessagingPageXpath));
 
-			NavJobsIconResults navjobsiconresults = new NavJobsIconResults(driver);
-			navjobsiconresults.clickJobs ();
-			Assert.assertTrue(navjobsiconresults.isElementPresent(NavJobsIconResults.JobsIconXpath));
-
-			NavMessagingIconResults navmessagingiconresults = new NavMessagingIconResults (driver);
-			navmessagingiconresults.clickMessaging();
-			Assert.assertTrue(navmessagingiconresults.isElementPresent(NavMessagingIconResults.MessagingPageXpath));
-
-			NavNotificationsIconResults navnotificationciconresults = new NavNotificationsIconResults (driver);
-			navnotificationciconresults.clickNotifications();
-			Assert.assertTrue(navnotificationciconresults.isElementPresent(NavNotificationsIconResults.NotificationsPageXpath));
-
-			Thread.sleep(3000);
+	NavNotificationsIconResults navnotificationciconresults = navmessagingiconresults.clickNotifications();
+	Assert.assertTrue(navnotificationciconresults.isElementPresent(NavNotificationsIconResults.NotificationsPageXpath));
+						
 		}
+	
+	@Test
+	public void messagingWindowTest() {
+		
+	MessagingWindow messagingwindow = new MessagingWindow (driver);
+	
+	ComposeMessageWindow composemessagew =  messagingwindow.composeIcon();
+	Assert.assertTrue(composemessagew.isElementPresent(ComposeMessageWindow.ComposeWindowXPath));
+	
+	}
 }

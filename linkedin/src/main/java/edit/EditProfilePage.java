@@ -31,8 +31,9 @@ public EditIntroWindow applyClick() {
 	return new EditIntroWindow (driver);
 }
 
-public void saveeditIntro () {
+public EditProfilePage saveeditIntro () {
 	savebutton.submit();
+	return new EditProfilePage(driver);
 }
 
 }

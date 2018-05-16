@@ -1,6 +1,7 @@
 navbar\NavHomeIconRestults.class
 navbar\NavMyNetworkIconResults.class
 pages\FeedPage.class
+messagingbox\ComposeMessageWindow.class
 basePages\PageObject$1.class
 edit\EditProfilePage.class
 pages\LinkedinHomePage.class
@@ -10,4 +11,5 @@ navbar\NavBarResults.class
 edit\EditPhotoWindow.class
 navbar\NavNotificationsIconResults.class
 navbar\NavJobsIconResults.class
+messagingbox\MessagingWindow.class
 edit\EditIntroWindow.class

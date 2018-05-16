@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import basePages.PageObject;
+import edit.EditProfilePage;
 
 public class FeedPage extends PageObject {
    
@@ -20,8 +21,9 @@ public class FeedPage extends PageObject {
 	@FindBy(xpath="//h3[@class='nav-settings__member-name Sans-16px-black-90%-bold']")
 	WebElement profilepagebutton;
 	
-	public void clickDropdownMenu() {
+	public EditProfilePage clickDropdownMenu() {
 		dropdownmenu.click();
 		profilepagebutton.click();
+		return new EditProfilePage (driver);
 	}
 }
