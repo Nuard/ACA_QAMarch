@@ -14,6 +14,8 @@ public class FunctionalTestBase {
 
 		public WebDriver driver;
 		final String URL = "https://www.linkedin.com/";
+		final String username = "fortesting14@yandex.ru";
+		final String pass = "Knockknock14";
 
 	    @BeforeClass
 	    @Parameters(value={"driver.prop", "driver.path"} )
@@ -25,10 +27,17 @@ public class FunctionalTestBase {
 	        driver.get(URL);
 	    }
 	    
+	    public String getUsername() {
+			return username;
+		}
+
+		public String getPass() {
+			return pass;
+		}
+	    
 		@AfterClass
 		public void tearDown() {
 			driver.quit();
 		}
-
 
 }

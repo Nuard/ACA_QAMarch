@@ -14,14 +14,11 @@ import util.FunctionalTestBase;
 
 public class NavBarTest extends FunctionalTestBase {
 	
-	final String username = "fortesting14@yandex.ru";
-	final String pass = "Knockknock14";
-
 	@Test
 	public void navBarTest() {
 		
 	LinkedinHomePage linkedinhomepage = new LinkedinHomePage(driver);
-	linkedinhomepage.loginData(username, pass);
+	linkedinhomepage.loginData(getUsername(), getPass());
 	Assert.assertTrue(linkedinhomepage.isElementPresent(LinkedinHomePage.LoginPageXpath));
 	
 	NavBarResults navbarresults = new NavBarResults (driver);
