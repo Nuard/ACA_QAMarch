@@ -13,7 +13,7 @@ public class LinkedinHomePage extends PageObject{
  
  }
  
- public static final String FeedPageXpath = "//div[@class='core-rail']";
+ public static final String LoginPageXpath = "//div[@class='core-rail']";
  
  @FindBy(xpath="//input[@id='login-email']")
  WebElement email;
@@ -29,5 +29,5 @@ public class LinkedinHomePage extends PageObject{
 	 submit.click();
 	return new FeedPage (driver);
  }
-
+ 
 }

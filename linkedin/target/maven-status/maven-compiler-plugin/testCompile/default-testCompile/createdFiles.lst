@@ -1,2 +1,5 @@
+linkedin\MessagingTest.class
 util\FunctionalTestBase.class
-linkedin\LinkedInTest.class
+linkedin\LoginTest.class
+linkedin\NavBarTest.class
+linkedin\EditProfileTest.class

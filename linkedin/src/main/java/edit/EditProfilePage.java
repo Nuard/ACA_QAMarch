@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import basePages.PageObject;
+import pages.ProfilePage;
 
 public class EditProfilePage extends PageObject {
 	
@@ -15,7 +16,7 @@ public class EditProfilePage extends PageObject {
 	public static final String EditProfilePageXpath = "//h2[@class='pv-dashboard-section__title']";
 	
   @FindBy (xpath="//div/button[@class='profile-photo-edit__edit-btn']")
-    WebElement editphoto;
+  WebElement editphoto;
   @FindBy (xpath="//button[@class='profile-photo-cropper__apply-action button-primary-medium ']")
   WebElement apply;
   @FindBy(xpath="//div/button[@class='pe-form-footer__action--submit form-submit-action Sans-15px-white-100%']")
@@ -31,9 +32,9 @@ public EditIntroWindow applyClick() {
 	return new EditIntroWindow (driver);
 }
 
-public EditProfilePage saveeditIntro () {
+public ProfilePage saveeditIntro () {
 	savebutton.submit();
-	return new EditProfilePage(driver);
+	return new ProfilePage(driver);
 }
 
 }
