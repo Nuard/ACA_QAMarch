@@ -4,7 +4,12 @@
 <parameter name="driver.path" value="C:\Users\Nuard\Downloads\chromedriver.exe"></parameter>
   <test name="Test" >
     <classes>
+       <class name="linkedin.LoginTest"/>
+       <class name="linkedin.EditProfileTest"/>
+       <class name="linkedin.MessagingTest"/>
+       <class name="linkedin.NavBarTest"/>
        <class name="linkedin.SearchTest"/>
+       <class name="linkedin.DashboardTest"/>
     </classes>
   </test>
 </suite>
