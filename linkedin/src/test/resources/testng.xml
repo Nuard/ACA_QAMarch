@@ -10,6 +10,7 @@
        <class name="linkedin.NavBarTest"/>
        <class name="linkedin.SearchTest"/>
        <class name="linkedin.DashboardTest"/>
+       <class name="linkedin.SharingTest"/>
     </classes>
   </test>
 </suite>
