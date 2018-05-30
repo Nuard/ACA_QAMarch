@@ -11,6 +11,11 @@
        <class name="linkedin.SearchTest"/>
        <class name="linkedin.DashboardTest"/>
        <class name="linkedin.SharingTest"/>
+       <class name="linkedin.NavIconHomeTest"/>
+       <class name="linkedin.NavIconMyNetworkTest"/>
+       <class name="linkedin.NavIconJobsTest"/>
+       <class name="linkedin.NavIconMessagingTest"/>
+       <class name="linkedin.NavIconNotificationsTest"/>
     </classes>
   </test>
 </suite>
