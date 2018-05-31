@@ -7,7 +7,6 @@
        <class name="linkedin.LoginTest"/>
        <class name="linkedin.EditProfileTest"/>
        <class name="linkedin.MessagingTest"/>
-       <class name="linkedin.NavBarTest"/>
        <class name="linkedin.SearchTest"/>
        <class name="linkedin.DashboardTest"/>
        <class name="linkedin.SharingTest"/>
