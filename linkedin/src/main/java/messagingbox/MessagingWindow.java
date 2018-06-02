@@ -13,7 +13,7 @@ public class MessagingWindow extends PageObject {
 	
 	public static final String MessagBoxXpath = "//div[@id=\"ember2929\"]"; 
 	
-	@FindBy (xpath="//li-icon[@type='compose-icon' and @size='small']")
+	@FindBy (xpath="//button[@class='msg-overlay-bubble-header__control msg-overlay-bubble-header__control--new-convo-btn']")
 	WebElement composemsg;
 
 	public  ComposeMessageWindow composeIcon () {

@@ -17,9 +17,8 @@ public class ComposeMessageWindow extends PageObject {
 	@FindBy(xpath="//button[@class='msg-overlay-bubble-header__control js-msg-close']")
 	WebElement closeicon;
 
-	public NavNotificationsIconResults closeMessaging() {
+	public void closeMessaging() {
 		closeicon.click();
-		return new NavNotificationsIconResults(driver);
 	}
 }
 	
