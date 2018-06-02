@@ -20,7 +20,7 @@ public class MessagingTest extends FunctionalTestBase {
 	MessagingWindow messagingwindow = new MessagingWindow (driver);
 	
 	ComposeMessageWindow composemessagew =  messagingwindow.composeIcon();
-//	Assert.assertTrue(composemessagew.isElementPresent(ComposeMessageWindow.ComposeWindowXPath));
+	Assert.assertTrue(composemessagew.isElementPresent(ComposeMessageWindow.ComposeWindowXPath));
 	
 	composemessagew.closeMessaging();
 	
