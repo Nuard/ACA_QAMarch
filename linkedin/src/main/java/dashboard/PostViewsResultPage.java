@@ -15,6 +15,6 @@ public class PostViewsResultPage extends PageObject {
 public final static String PostViewsResultPageXpath = "//h1[@class='Sans-19px-black-85%-semibold']";
 	
 	@FindBy(xpath = PostViewsResultPageXpath)
-	WebElement profileviews;
+	WebElement postviews;
 	
 }
