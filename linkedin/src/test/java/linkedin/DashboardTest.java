@@ -7,7 +7,6 @@ import dashboard.PostViews;
 import dashboard.PostViewsResultPage;
 import dashboard.ProfileViews;
 import dashboard.ProfileViewsResultPage;
-import pages.LinkedinHomePage;
 import pages.ProfilePage;
 import util.FunctionalTestBase;
 
@@ -15,11 +14,7 @@ public class DashboardTest extends FunctionalTestBase {
 	
 	@Test
 	public void dashboardTest () {
-
-		LinkedinHomePage linkedinhomepage = new LinkedinHomePage(driver);
-		linkedinhomepage.loginData(getUsername(), getPass());
-		Assert.assertTrue(linkedinhomepage.isElementPresent(LinkedinHomePage.LoginPageXpath));
-		
+	
 		ProfilePage profilepage = new ProfilePage (driver);
 		profilepage.navigatetoProfilePage();
 		

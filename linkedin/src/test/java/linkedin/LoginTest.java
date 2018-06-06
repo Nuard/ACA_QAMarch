@@ -12,7 +12,7 @@ public class LoginTest extends FunctionalTestBase {
 	public void loginPageTest() {
 
 	LinkedinHomePage linkedinhomepage = new LinkedinHomePage(driver);
-	linkedinhomepage.loginData(getUsername(), getPass());
+
 	Assert.assertTrue(linkedinhomepage.isElementPresent(LinkedinHomePage.LoginPageXpath));
 	
 	SignOut signout = new SignOut (driver);

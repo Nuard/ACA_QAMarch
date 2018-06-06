@@ -18,23 +18,19 @@ public class EditProfileTest extends FunctionalTestBase {
 
 	@Test
 	public void editProfile( ) {
+				
+		FeedPage feedpage = new FeedPage (driver);
+	
+		EditProfilePage editprofilepage = feedpage.clickDropdownMenu();
+		Assert.assertTrue(editprofilepage.isElementPresent(EditProfilePage.EditProfilePageXpath));
+	
+		EditPhotoWindow editphotowindow = editprofilepage.profilePhoto();
+		Assert.assertTrue(editphotowindow.isElementPresent(EditPhotoWindow.EditPhotoXpath));
+	
+		EditIntroWindow editintrowindow = editphotowindow.applyClick();
+		Assert.assertTrue(editintrowindow.isElementPresent(EditIntroWindow.EditIntroWindowXpath));
 		
-	LinkedinHomePage linkedinhomepage = new LinkedinHomePage(driver);
-		
-	FeedPage feedpage = linkedinhomepage.loginData(username, pass);
-	Assert.assertTrue(linkedinhomepage.isElementPresent(LinkedinHomePage.LoginPageXpath));
-	
-	EditProfilePage editprofilepage = feedpage.clickDropdownMenu();
-	Assert.assertTrue(editprofilepage.isElementPresent(EditProfilePage.EditProfilePageXpath));
-	
-	EditPhotoWindow editphotowindow = editprofilepage.profilePhoto();
-	Assert.assertTrue(editphotowindow.isElementPresent(EditPhotoWindow.EditPhotoXpath));
-	
-
-	EditIntroWindow editintrowindow = editphotowindow.applyClick();
-	Assert.assertTrue(editintrowindow.isElementPresent(EditIntroWindow.EditIntroWindowXpath));
-
-	ProfilePage profilepage = editintrowindow.saveeditIntro();
+		editintrowindow.saveeditIntro();
 	
 	}
 }
